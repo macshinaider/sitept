@@ -1,0 +1,88 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlserver"
+  url      = env("DATABASE_URL")
+}
+
+model BannedMac {
+  ID         Int    @id(map: "PK_BannedMac") @default(autoincrement())
+  Name       String @db.VarChar(50)
+  MacAddress String @db.VarChar(20)
+  szHDUUID   String @db.VarChar(20)
+  Banned     Int
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model Caravans {
+  ID            String? @db.VarChar(50)
+  Name          String? @db.VarChar(50)
+  CaravanName   String? @db.VarChar(50)
+  CaravanType   String? @db.VarChar(50)
+  RemainingTime Int?
+  Identity      Int     @default(autoincrement())
+
+  @@ignore
+}
+
+model GameMasters {
+  ID              Int    @id(map: "PK_GameMasterList") @default(autoincrement())
+  Account         String @db.VarChar(32)
+  GameMasterLevel Int
+}
+
+model PremiumData {
+  ID            Int    @id(map: "PK_PremiumData") @default(autoincrement())
+  CharacterName String @db.VarChar(50)
+  TimeLeft      Int
+  ItemType      Int
+}
+
+model sysdiagrams {
+  name         String @db.NVarChar(128)
+  principal_id Int
+  diagram_id   Int    @id(map: "PK__sysdiagrams__060DEAE8") @default(autoincrement())
+  version      Int?
+  definition   Bytes?
+
+  @@unique([principal_id, name], map: "UK_principal_name")
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model UserInfo {
+  accountID String   @db.VarChar(50)
+  Name      String   @db.VarChar(50)
+  Lvl       Int
+  Exp       Int
+  DateUp    DateTime @db.DateTime
+  Kills     Int
+  Deads     Int
+  Class     Int
+
+  @@ignore
+}
+
+model Users {
+  ID       Int    @id(map: "PK_Users_ID") @unique(map: "UK_Users_ID") @default(autoincrement())
+  Username String @unique(map: "UK_Users_Username") @db.VarChar(50)
+  Password String @db.VarChar(50)
+  Blocked  Int    @db.TinyInt
+  UserCoin Int
+  UserTime Int
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model VIP {
+  ID        String? @db.VarChar(50)
+  DiaInicio Int?
+  MesInicio Int?
+  AnoInicio Int?
+  DiaExpira Int?
+  MesExpira Int?
+  AnoExpira Int?
+  VipLevel  Int?
+
+  @@ignore
+}
