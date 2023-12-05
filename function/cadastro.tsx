@@ -1,7 +1,7 @@
 "use server";
 import prisma from "@/lib/prisma";
 
-export async function Cadastro(username: string, password: string) {
+export async function Cadastro(username: string, password: string)  {
   const cadastrar = await prisma.users.create({
     data: {
       Username: username,
