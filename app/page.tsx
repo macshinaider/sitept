@@ -30,7 +30,7 @@ export default function Home() {
           <p className="bg-[#5865F2] p-2 rounded-lg text-white">Discord</p>
         </button>
         <button>
-          <p className="bg-yellow-500 p-2 rounded-lg text-white">Download</p>
+          <p className="bg-yellow-500 p-2 rounded-lg text-white">Download!</p>
         </button>
       </div>
 
