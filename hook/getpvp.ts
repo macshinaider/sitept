@@ -12,12 +12,12 @@ export type Jogador = {
 	Deads: number;
 	Class: number;
 };
-export const GetRanquedExp = () => {
+export const GetRanquedPvp = () => {
     const [jogadores, setJogadores] = useState<Jogador[]>();
     const [loading, setLoading] = useState<boolean>(false);
     const [error, setError] = useState<Error | null>(null);
   
-    const fetchJogadores = async (): Promise<void> => {
+    const fetchJogadorespvp = async (): Promise<void> => {
       setLoading(true);
       try {
         const response = await GetJogadores();
@@ -25,8 +25,8 @@ export const GetRanquedExp = () => {
         // Verificar se 'response' é uma array antes de tentar ordenar
         if (Array.isArray(response)) {
           // Ordenar jogadores pela função de ordenação
-          const jogadoresOrdenados = response.sort((a, b) => b.Lvl - a.Lvl || b.Exp - a.Exp);
-          setJogadores(jogadoresOrdenados.slice(0, 5));
+          const odernarranque = response.sort((a, b) => b.Kills - a.Kills);
+          setJogadores(odernarranque.slice(0,5))
         } else {
           setJogadores([]);
         }
@@ -38,7 +38,7 @@ export const GetRanquedExp = () => {
       }
     };
   
-    return { jogadores, loading, error, fetchJogadores };
+    return { jogadores, loading, error, fetchJogadorespvp };
   };
   
  

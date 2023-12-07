@@ -17,21 +17,24 @@ async function generateNumericHash(password: string) {
 	return numericHash;
 }
 
-export async function Cadastro(
-	username: string,
-	password: string,
-	email: string,
-	whatsapp: string
-) {
+export interface createCadastroData {
+	username: string;
+	password: string;
+	email: string;
+	whatsapp: string;
+}
+
+export async function Cadastro(data: createCadastroData) {
+	console.log("🚀 ~ file: cadastro.ts:28 ~ Cadastro ~ data:", data);
 	const cadastrar = await prisma.users.create({
 		data: {
-			Username: username,
-			Password: password,
+			Username: data.username,
+			Password: data.password,
 			Blocked: 0,
 			UserCoin: 0,
 			UserTime: 0,
 			Confirmed: false,
-			Whatsapp: whatsapp,
+			Whatsapp: data.whatsapp,
 		},
 	});
 
@@ -39,9 +42,7 @@ export async function Cadastro(
 		return false;
 	}
 
-	
-
-	const dadosconfirmed = await generateNumericHash(whatsapp)
+	const dadosconfirmed = await generateNumericHash(data.whatsapp);
 	const cadastrarkey = await prisma.users.update({
 		where: {
 			ID: cadastrar.ID,
@@ -50,7 +51,7 @@ export async function Cadastro(
 			CodigoConfirm: dadosconfirmed,
 		},
 	});
-	const data = {
+	const datau = {
 		number: cadastrar.Whatsapp,
 		options: {
 			delay: 1200,
@@ -61,7 +62,7 @@ export async function Cadastro(
 			text: `Para você Ganhar os 2000 Coins você precisa confirmar seu cadastro nesse Link Abaixo! \n\n Larean Priston Tale`,
 		},
 	};
-	const confirmed = await api.post(`/message/sendText/jonife`, data);
+	const confirmed = await api.post(`/message/sendText/jonife`, datau);
 
 	const data1 = {
 		number: cadastrar.Whatsapp,
