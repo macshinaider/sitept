@@ -1,0 +1,25 @@
+BEGIN TRY
+
+BEGIN TRAN;
+
+-- DropIndex
+ALTER TABLE [dbo].[Users] DROP CONSTRAINT [Users_Whatsapp_key];
+
+-- AlterTable
+ALTER TABLE [dbo].[Users] ALTER COLUMN [Whatsapp] NVARCHAR(1000) NOT NULL;
+
+-- CreateIndex
+ALTER TABLE [dbo].[Users] ADD CONSTRAINT [Users_Whatsapp_key] UNIQUE NONCLUSTERED ([Whatsapp]);
+
+COMMIT TRAN;
+
+END TRY
+BEGIN CATCH
+
+IF @@TRANCOUNT > 0
+BEGIN
+    ROLLBACK TRAN;
+END;
+THROW
+
+END CATCH

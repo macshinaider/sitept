@@ -65,12 +65,15 @@ model UserInfo {
 }
 
 model Users {
-  ID       Int    @id(map: "PK_Users_ID") @unique(map: "UK_Users_ID") @default(autoincrement())
-  Username String @unique(map: "UK_Users_Username") @db.VarChar(50)
-  Password String @db.VarChar(50)
-  Blocked  Int    @db.TinyInt
-  UserCoin Int
-  UserTime Int
+  ID            Int     @id(map: "PK_Users_ID") @unique(map: "UK_Users_ID") @default(autoincrement())
+  Username      String  @unique(map: "UK_Users_Username") @db.VarChar(50)
+  Password      String  @db.VarChar(50)
+  Blocked       Int     @db.TinyInt
+  UserCoin      Int
+  UserTime      Int
+  Confirmed     Boolean @default(false)
+  Whatsapp      String     @unique
+  CodigoConfirm String?
 }
 
 /// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
