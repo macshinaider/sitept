@@ -7,7 +7,7 @@ export const Prompt = () => {
           <button className="btn"></button>
           <button className="btn btn-color"></button>
         </div>
-        <p className="user text-gray-400 text-sm ml-6">Larean PT: ~</p>
+        <p className="user text-gray-400 text-sm ml-6">Larean Priston Tale: ~</p>
         <div className="add_tab border border-white text-white px-6 py-2 rounded-tl-lg rounded-tr-lg cursor-pointer">
           +
         </div>
