@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 const sitefront = process.env.NEXT_PUBLIC_API_URL;
 
 const getapi = axios.create({
-	baseURL: sitefront + "/api",
+	baseURL: "https://" + sitefront + "/api",
 });
 
 const Confirmar = ({ params }: { params: { id: string } }) => {
