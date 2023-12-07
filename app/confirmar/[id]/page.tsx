@@ -3,8 +3,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
+const sitefront = process.env.NEXT_PUBLIC_API_URL;
+
 const getapi = axios.create({
-	baseURL: "http://localhost:3000/api",
+	baseURL: sitefront + "/api",
 });
 
 const Confirmar = ({ params }: { params: { id: string } }) => {
@@ -17,7 +19,6 @@ const Confirmar = ({ params }: { params: { id: string } }) => {
 		const verificar = async () => {
 			const consultar = await getapi.get(`/cfm?id=${id}`);
 			setSucess(consultar.data);
-			
 		};
 
 		verificar();
