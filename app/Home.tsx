@@ -1,15 +1,12 @@
 "use client";
 import { Prompt } from "@/components/card";
-import ModalCadastro from "@/app/cadastro/page";
 import RanquePVP from "@/components/rankpvp";
 import RanqueEXP from "@/components/rankxp";
-import Image from "next/image";
-import { useEffect } from "react";
-import { Form } from "react-hook-form";
+import { useState } from "react";
 import Link from "next/link";
-import useSound from "use-sound";
 
-export default function Home() {	
+export default function Home() {
+	const [ispoupop, setIspoupop] = useState<boolean>(false);
 
 	function DiscordRedirect() {
 		window.open("https://discord.gg/A7RtTbavEW", "_blank");
