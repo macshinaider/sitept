@@ -1,7 +1,7 @@
 "use client";
 import { Prompt } from "@/components/card";
 import Modal from "@/components/poupop";
-import RankingsXp from "@/components/rankxp";
+import RanqueEXP from "@/components/rankxp";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -38,7 +38,7 @@ export default function Home() {
 			{ispoupop && <Modal setIspoupop={setIspoupop} />}
 			<div className="flex justify-between gap-5">
 				<div>
-					<RankingsXp />
+					<RanqueEXP />
 				</div>
 				<div>
 					<iframe
@@ -48,7 +48,7 @@ export default function Home() {
 						sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
 					></iframe>
 				</div>
-        <div></div>
+				<div></div>
 			</div>
 			<Prompt />
 		</main>

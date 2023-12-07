@@ -1,27 +1,30 @@
-import prisma from "@/lib/prisma";
+"use client";
 
-const RankingsXp = async () => {
-	// Obter dados do Prisma
-	const dados = await prisma.userInfo.findMany();
+import { GetRanquedExp } from "@/hook/getexp";
+import { useEffect } from "react";
 
-	// Ordenar por nível (Lvl) em ordem decrescente e, em caso de empate, por experiência (Exp) em ordem decrescente
-	const dadosOrdenados = dados.sort((a, b) => {
-		if (b.Lvl !== a.Lvl) {
-			return b.Lvl - a.Lvl;
-		}
-		return b.Exp - a.Exp;
-	});
+const RanqueEXP = () => {
+	const { jogadores, fetchJogadores } = GetRanquedExp();
 
-	// Pegar apenas os 5 primeiros jogadores
-	const cincoPrimeirosJogadores = dadosOrdenados.slice(0, 5);
+    useEffect(() => {
+        if (!jogadores) {
+            fetchJogadores();
+        }
+      }, []);
 
-	console.log("🚀cinco primeiros jogadores:", cincoPrimeirosJogadores);
+      if (!jogadores) {
+        return (
+          <div className="hidden">
+            <h1>Carregando</h1>
+          </div>
+        );
+      }
 
 	return (
 		<div className="max-w-screen-md mx-auto p-8">
 			<h1 className="text-2xl font-bold mb-4">Rankings de Experiência</h1>
 			<ul className="list-none p-0">
-				{cincoPrimeirosJogadores.map((jogador) => (
+				{jogadores.map((jogador) => (
 					<li
 						key={jogador.ID}
 						className="border rounded p-2 mb-2 flex justify-between"
@@ -45,4 +48,4 @@ const RankingsXp = async () => {
 	);
 };
 
-export default RankingsXp;
+export default RanqueEXP;
