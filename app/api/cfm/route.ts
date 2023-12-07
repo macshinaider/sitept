@@ -1,3 +1,4 @@
+"use server"
 import { Consultar } from "@/function/consultarcodigo";
 import { NextRequest, NextResponse } from "next/server";
 
