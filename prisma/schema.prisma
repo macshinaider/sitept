@@ -52,6 +52,7 @@ model sysdiagrams {
 
 /// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
 model UserInfo {
+  ID        Int      @id(map: "PK_UserInfo_ID") @unique(map: "UK_UserInfo_ID") @default(autoincrement())
   accountID String   @db.VarChar(50)
   Name      String   @db.VarChar(50)
   Lvl       Int
@@ -60,8 +61,6 @@ model UserInfo {
   Kills     Int
   Deads     Int
   Class     Int
-
-  @@ignore
 }
 
 model Users {
@@ -72,7 +71,7 @@ model Users {
   UserCoin      Int
   UserTime      Int
   Confirmed     Boolean @default(false)
-  Whatsapp      String     @unique
+  Whatsapp      String  @unique
   CodigoConfirm String?
 }
 

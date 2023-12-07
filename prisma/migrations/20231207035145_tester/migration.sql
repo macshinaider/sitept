@@ -52,6 +52,7 @@ CREATE TABLE [dbo].[sysdiagrams] (
 
 -- CreateTable
 CREATE TABLE [dbo].[UserInfo] (
+    [ID] INT NOT NULL IDENTITY(1,1),
     [accountID] VARCHAR(50) NOT NULL,
     [Name] VARCHAR(50) NOT NULL,
     [Lvl] INT NOT NULL,
@@ -59,7 +60,9 @@ CREATE TABLE [dbo].[UserInfo] (
     [DateUp] DATETIME NOT NULL,
     [Kills] INT NOT NULL,
     [Deads] INT NOT NULL,
-    [Class] INT NOT NULL
+    [Class] INT NOT NULL,
+    CONSTRAINT [PK_UserInfo_ID] PRIMARY KEY CLUSTERED ([ID]),
+    CONSTRAINT [UK_UserInfo_ID] UNIQUE NONCLUSTERED ([ID])
 );
 
 -- CreateTable
@@ -72,6 +75,7 @@ CREATE TABLE [dbo].[Users] (
     [UserTime] INT NOT NULL,
     [Confirmed] BIT NOT NULL CONSTRAINT [Users_Confirmed_df] DEFAULT 0,
     [Whatsapp] NVARCHAR(1000) NOT NULL,
+    [CodigoConfirm] NVARCHAR(1000),
     CONSTRAINT [PK_Users_ID] PRIMARY KEY CLUSTERED ([ID]),
     CONSTRAINT [UK_Users_ID] UNIQUE NONCLUSTERED ([ID]),
     CONSTRAINT [UK_Users_Username] UNIQUE NONCLUSTERED ([Username]),
