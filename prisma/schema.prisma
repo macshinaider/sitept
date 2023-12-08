@@ -75,6 +75,14 @@ model Users {
   CodigoConfirm String?
 }
 
+model Group {
+  ID Int @id @unique @default(autoincrement())
+  Groupid  String  @unique
+  Size  String  
+  
+
+}
+
 /// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
 model VIP {
   ID        String? @db.VarChar(50)

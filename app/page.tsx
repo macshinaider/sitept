@@ -8,9 +8,11 @@ import { useEffect } from "react";
 import { Form } from "react-hook-form";
 import Link from "next/link";
 import useSound from "use-sound";
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
+import LaunchPage from "@/components/countdown";
 
-export default function Home() {	
-
+export default function Home() {
 	function DiscordRedirect() {
 		window.open("https://discord.gg/A7RtTbavEW", "_blank");
 	}
@@ -21,6 +23,7 @@ export default function Home() {
 				<>
 					<h1 className="text-3xl">BETA OPEN</h1>
 				</>
+				<LaunchPage />
 
 				<h1>Larean Priston Tale</h1>
 				<div className="flex gap-4">
@@ -28,6 +31,12 @@ export default function Home() {
 						<p className="bg-cyan-600 hover:bg-cyan-700 p-2 rounded-lg text-white">
 							Criar Conta
 						</p>
+					</Link>
+					<Link
+						href="/esquecisenha"
+						className="bg-red-600 hover:bg-red-700 p-2 rounded-lg text-white"
+					>
+						Recuperar Senha
 					</Link>
 					<button onClick={DiscordRedirect}>
 						<p className="bg-[#5865F2] hover:bg-blue-800 p-2 rounded-lg text-white">
