@@ -11,6 +11,7 @@ import useSound from "use-sound";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import LaunchPage from "@/components/countdown";
+import Head from "next/head";
 
 export default function Home() {
 	function DiscordRedirect() {
@@ -22,6 +23,14 @@ export default function Home() {
 			<div>
 				<>
 					<h1 className="text-3xl">BETA OPEN</h1>
+					<Head>
+						<title>Larean Priston Tale</title>
+						<meta
+							name="description"
+							content="Bem-vindo ao Larean Priston Tale, um jogo emocionante e envolvente. Junte-se a nós agora!"
+						/>
+						<link rel="canonical" href="https://www.seusite.com.br" />
+					</Head>
 				</>
 				{/* <LaunchPage /> */}
 
