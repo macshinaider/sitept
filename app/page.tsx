@@ -23,7 +23,7 @@ export default function Home() {
 				<>
 					<h1 className="text-3xl">BETA OPEN</h1>
 				</>
-				<LaunchPage />
+				{/* <LaunchPage /> */}
 
 				<h1>Larean Priston Tale</h1>
 				<div className="flex gap-4">
