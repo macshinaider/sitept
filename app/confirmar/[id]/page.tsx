@@ -1,13 +1,9 @@
 "use client";
 
-import axios from "axios";
 import { useEffect, useState } from "react";
+import { getapi } from "./getapi";
 
-const sitefront = process.env.NEXT_PUBLIC_API_URL;
 
-const getapi = axios.create({
-	baseURL: "https://" + sitefront + "/api",
-});
 
 const Confirmar = ({ params }: { params: { id: string } }) => {
 	const [sucess, setSucess] = useState<boolean>(false);
