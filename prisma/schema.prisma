@@ -73,8 +73,8 @@ model Users {
   Confirmed     Boolean @default(false)
   Whatsapp      String  @unique
   CodigoConfirm String?
-  Nome          String
-  cpf           String
+  Nome          String @default("null")
+  Cpf           String @default("null")
 }
 
 model Group {
