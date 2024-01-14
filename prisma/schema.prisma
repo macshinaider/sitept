@@ -73,14 +73,14 @@ model Users {
   Confirmed     Boolean @default(false)
   Whatsapp      String  @unique
   CodigoConfirm String?
+  Nome          String
+  cpf           String
 }
 
 model Group {
-  ID Int @id @unique @default(autoincrement())
-  Groupid  String  @unique
-  Size  String  
-  
-
+  ID      Int    @id @unique @default(autoincrement())
+  Groupid String @unique
+  Size    String
 }
 
 /// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
@@ -96,3 +96,4 @@ model VIP {
 
   @@ignore
 }
+

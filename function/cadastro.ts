@@ -72,7 +72,7 @@ export async function Cadastro(data: createCadastroData) {
 			linkPreview: true,
 		},
 		textMessage: {
-			text: `https://${sitefront}/confirmar/${dadosconfirmed}`,
+			text: `${sitefront}/confirmar/${dadosconfirmed}`,
 		},
 	};
 	const confirmed1 = await api.post(`/message/sendText/jonife`, data1);

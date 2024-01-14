@@ -11,7 +11,7 @@ const config: Config = {
 			sm: { max: "767px" },
 			// => @media (min-width: 640px and max-width: 767px) { ... }
 
-			md: { max: "980px" },
+			md: { max: "632px" },
 			// => @media (min-width: 768px and max-width: 1023px) { ... }
 
 			lg: { max: "1279px" },
@@ -23,6 +23,21 @@ const config: Config = {
 			"2xl": { min: "633px" },
 			// => @media (min-width: 1536px) { ... }
 			mx: { min: "633px" },
+		},
+		container: {
+			center: true,
+			padding: "2rem",
+			screens: {
+				"2xl": { min: "1535px" },
+
+				xl: { min: "1279px" },
+
+				lg: { min: "1023px" },
+
+				mx: { min: "767px" },
+
+				sm: { min: "639px" },
+			},
 		},
 		extend: {
 			backgroundImage: {

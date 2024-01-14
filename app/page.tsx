@@ -19,25 +19,25 @@ export default function Home() {
 	}
 
 	return (
-		<main className="flex flex-col items-center justify-center text-center inset-0 gap-5">
+		<main className="flex flex-col items-center justify-center text-center inset-0 gap-5 p-2">
 			<div>
 				<>
-					<h1 className="text-3xl">BETA OPEN</h1>
+					<h1 className="text-3xl hidden">BETA OPEN</h1>
 					<Head>
 						<title>Larean Priston Tale</title>
 						<meta
 							name="description"
 							content="Bem-vindo ao Larean Priston Tale, um jogo emocionante e envolvente. Junte-se a nós agora!"
 						/>
-						<link rel="canonical" href="https://www.seusite.com.br" />
+						<link rel="canonical" href="https://www.pt.larean.com.br" />
 					</Head>
 				</>
 				{/* <LaunchPage /> */}
 
-				<h1>Larean Priston Tale</h1>
-				<div className="flex gap-4">
+				<h1 className="hidden">Larean Priston Tale</h1>
+				<div className="flex gap-4 md:flex-col">
 					<Link href="/cadastro">
-						<p className="bg-cyan-600 hover:bg-cyan-700 p-2 rounded-lg text-white">
+						<p className="bg-emerald-600 hover:bg-emerald-700 p-2 rounded-lg text-white">
 							Criar Conta
 						</p>
 					</Link>
@@ -53,8 +53,8 @@ export default function Home() {
 						</p>
 					</button>
 					<button>
-						<p className="bg-yellow-500 hover:bg-yellow-700 p-2 rounded-lg text-white">
-							Download!
+						<p className="bg-green-500 hover:bg-green-700 p-2 rounded-lg text-white">
+							Download
 						</p>
 					</button>
 				</div>

@@ -16,7 +16,6 @@ const createUserFormSchema = z.object({
 	whatsapp: z.string(),
 });
 
-
 type CreateUserFormData = z.infer<typeof createUserFormSchema>;
 
 const ModalCadastro = () => {

@@ -2,19 +2,21 @@
 
 import { useEffect, useState } from "react";
 import { getapi } from "./getapi";
-
-
+import { useRouter } from "next/navigation";
 
 const Confirmar = ({ params }: { params: { id: string } }) => {
 	const [sucess, setSucess] = useState<boolean>(false);
-	console.log("🚀 sucess:", sucess);
+	const routes = useRouter()
 
 	const id = params.id;
 
 	useEffect(() => {
 		const verificar = async () => {
-			const consultar = await getapi.get(`/cfm?id=${id}`);
+			const consultar = await getapi.get(`/cfm?id=${id}`);			
 			setSucess(consultar.data);
+			setTimeout(() => {
+				routes.push("/");
+			}, 5000);
 		};
 
 		verificar();
