@@ -37,6 +37,7 @@ const ModalCadastro = () => {
 		console.log(data);
 		const verificar = await VerificarUserExistente(data.username);
 		console.log("🚀 ~ file: page.tsx:30 ~ createUser ~ verificar:", verificar);
+		
 
 		if (!verificar) {
 			Cadastro(data);
