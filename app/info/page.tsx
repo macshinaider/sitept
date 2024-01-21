@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 const Info = () => {
 	const route = useRouter();
 	return (
-		<div className="container mx-auto px-4 ">			
+		<div className="container mx-auto px-4 ">
 			<main className="flex flex-col items-center justify-center min-h-screen gap-3 p-2">
 				<div className="bg-emerald-500 p-3 rounded">
 					<button onClick={() => route.push("/")} className="text-white">
