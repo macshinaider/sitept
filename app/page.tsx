@@ -63,7 +63,7 @@ export default function Home() {
 					<button
 						onClick={() =>
 							baixarArquivo(
-								"https://console.testes-minio.bkbdro.easypanel.host/lareantristontale/LareanPT.exe"
+								"https://nextcloud.jonife.com.br/s/2fB3BkzCPKHpfRp/download/LareanPT.exe"
 							)
 						}
 					>

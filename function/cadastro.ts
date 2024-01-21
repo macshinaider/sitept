@@ -89,7 +89,7 @@ export async function Cadastro(data: createCadastroData) {
 			linkPreview: true,
 		},
 		textMessage: {
-			text: `Para você Ganhar os 1000 Coins você precisa confirmar seu cadastro nesse Link Abaixo! \n\n Larean Priston Tale`,
+			text: `Para você Ganhar os 1000 Coins você precisa confirmar seu cadastro nesse Link Abaixo! \n\n Larean Priston Tale \n www.pt.larean.com.br`,
 		},
 	};
 	const confirmed = await api.post(`/message/sendText/${INSTANCE}`, datau);
