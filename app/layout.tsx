@@ -21,7 +21,7 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body className={inter.className}>
+			<body className={`${inter.className}  bg-scroll bg-cover h-screen`} style={{ backgroundImage: "url('/imgfundo.png')", height: "1080px" }}>
 				<Header />
 				<ToastContainer />
 				{children}
