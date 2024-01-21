@@ -56,18 +56,7 @@ export async function Cadastro(data: createCadastroData) {
 				phone: data.whatsapp,
 				mobilePhone: data.whatsapp,
 				postalCode: data.cep,
-			};
-			const cliente = await asaas.post("v3/customers", enviaruser);
-			if (cliente.status === 200) {
-				const cadastraridusersql = await prisma.users.update({
-					where: {
-						ID: cadastrar.ID,
-					},
-					data: {
-						Iduserasaas: cliente.data.id,
-					},
-				});
-			}
+			};			
 		}
 
 		if (!cadastrar) {
