@@ -14,7 +14,6 @@ import LaunchPage from "@/components/countdown";
 import Head from "next/head";
 
 export default function Home() {
-	
 	function DiscordRedirect() {
 		window.open("https://discord.gg/A7RtTbavEW", "_blank");
 	}
@@ -42,6 +41,12 @@ export default function Home() {
 					</Head>
 				</>
 				{/* <LaunchPage /> */}
+				<div>
+					<audio controls autoPlay hidden>
+						<source src="/bemvindo.mp3" type="audio/mpeg" />
+						Your browser does not support the audio element.
+					</audio>
+				</div>
 
 				<h1 className="hidden">Larean Priston Tale</h1>
 				<div className="flex gap-4 md:flex-col">
