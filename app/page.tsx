@@ -32,14 +32,8 @@ export default function Home() {
 						/>
 						<link rel="canonical" href="https://www.pt.larean.com.br" />
 					</Head>
-				</>
+				</>			
 				
-				<div>
-					<audio controls autoPlay hidden>
-						<source src="/bemvindo.mp3" type="audio/mp3" />
-						Your browser does not support the audio element.
-					</audio>
-				</div>
 
 				<h1 className="hidden">Larean Priston Tale</h1>
 				<div className="flex gap-4 md:flex-col">
@@ -146,7 +140,7 @@ export default function Home() {
 					</a>
 				</h1>
 				<h1 className="flex items-center space-x-2">
-					<a className="font-bold text-gray-800">PvP Equih1brado</a>
+					<a className="font-bold text-gray-800">PvP Equilibrado</a>
 				</h1>
 				<h1 className="flex items-center space-x-2">
 					<a className="font-bold text-gray-800">
