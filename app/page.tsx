@@ -63,7 +63,7 @@ export default function Home() {
 					<button
 						onClick={() =>
 							baixarArquivo(
-								"https://nextcloud.jonife.com.br/s/2fB3BkzCPKHpfRp/download/LareanPT.exe"
+								"https://nextcloud.jonife.com.br/s/ezrCACpFkTZ8Yi6/download/Instalar%20Larean%20Priston%20Tale.exe"
 							)
 						}
 					>

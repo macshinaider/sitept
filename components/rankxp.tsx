@@ -15,7 +15,7 @@ const RanqueEXP = () => {
 	if (!jogadores) {
 		// Mostra o esqueleto enquanto os dados estão sendo carregados
 		return (
-			<div className="max-w-screen-md mx-auto p-8">
+			<div className="max-w-screen-md mx-auto p-8 ">
 				<h1 className="text-2xl font-bold mb-4">Rankings de Experiência</h1>
 				<ul className="list-none p-0 max-w-xs">
 					{[...Array(5).keys()].map((index) => (
@@ -39,13 +39,13 @@ const RanqueEXP = () => {
 	}
 
 	return (
-		<div className="max-w-screen-md mx-auto p-8">
+		<div className="max-w-screen-md mx-auto p-8 bg-gray-200 rounded">
 			<h1 className="text-2xl font-bold mb-4">Rankings de Experiência</h1>
 			<ul className="list-none p-0 max-w-xs">
 				{jogadores.map((jogador) => (
 					<li
 						key={jogador.ID}
-						className="border rounded p-2 mb-2 flex justify-between"
+						className="border rounded p-2 mb-2 flex justify-between bg-slate-100"
 					>
 						<div className="max-w-xs">
 							<p className="mb-2 justify-start items-start text-start">
