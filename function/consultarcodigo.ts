@@ -26,7 +26,7 @@ export async function Consultar(id: string) {
 			ID: consultar.ID,
 		},
 		data: {
-			UserCoin: 2000,
+			UserCoin: 1000,
 		},
 	});
 	if (!darpremio) {

@@ -14,7 +14,7 @@ const createUserFormSchema = z.object({
 	username: z.string().min(6, "Seu usuario tem muito pouco Caracteres!"),
 	nome: z.string().min(6, "Nome tem muito curto"),
 	cpf: z.string().min(6, "cpf invalido"),
-	password: z.string().min(6, "Senha muito curta!"),
+	password: z.string().min(4, "Senha muito curta!"),
 	email: z.string().email("Formato de Email errado!"),
 	whatsapp: z.string().min(13, "Precisar ser um numero correto!"),
 	cep: z.string().min(6, "Faltante o Cep"),
