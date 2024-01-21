@@ -3,6 +3,7 @@ import asaas from "@/lib/asaas";
 import api from "@/lib/axios";
 import prisma from "@/lib/prisma";
 import bcrypt from "bcrypt";
+import { EnviarAudio } from "./whatsapp/enviaraudio";
 
 const sitefront = process.env.NEXT_PUBLIC_API_URL;
 
@@ -106,4 +107,5 @@ export async function Cadastro(data: createCadastroData) {
 		},
 	};
 	const confirmed1 = await api.post(`/message/sendText/${INSTANCE}`, data1);
+	EnviarAudio(cadastrar.Whatsapp);
 }
