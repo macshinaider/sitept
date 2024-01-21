@@ -4,6 +4,7 @@ import RanquePVP from "@/components/rankpvp";
 import RanqueEXP from "@/components/rankxp";
 import Link from "next/link";
 import Head from "next/head";
+import Informacoes from "@/components/informacoes/info";
 
 export default function Home() {
 	function DiscordRedirect() {
@@ -84,12 +85,10 @@ export default function Home() {
 					<RanquePVP />
 				</div>
 			</div>
-			<iframe
-				src="https://discord.com/widget?id=1181632791935471636&theme=dark"
-				width="350"
-				height="500"
-				sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
-			></iframe>
+			<div className="flex justify-between">
+			<Informacoes />
+			</div>
+
 			<Prompt />
 		</main>
 	);
