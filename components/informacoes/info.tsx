@@ -9,76 +9,76 @@ const Informacoes = () => {
 			></iframe>
 			<ul className="flex flex-col items-start bg-gray-100 p-4 rounded-lg shadow-lg">
 				<li className="flex items-center space-x-2">
-					<span className="font-bold text-gray-800">Level Inicial:</span>
-					<span className="text-green-600">1</span>
+					<a className="font-bold text-gray-800">Level Inicial:</a>
+					<a className="text-green-600">1</a>
 				</li>
 				<li className="flex items-center space-x-2">
-					<span className="font-bold text-gray-800">Level Maximo:</span>
-					<span className="text-green-600">130</span>
+					<a className="font-bold text-gray-800">Level Maximo:</a>
+					<a className="text-green-600">130</a>
 				</li>
 				<li className="flex items-center space-x-2">
-					<span className="font-bold text-gray-800">XP rate:</span>
-					<span className="text-green-600">13x</span>
+					<a className="font-bold text-gray-800">XP rate:</a>
+					<a className="text-green-600">13x</a>
 				</li>
 				<li className="flex items-center space-x-2">
-					<span className="font-bold text-gray-800">Drop rate:</span>
-					<span className="text-red-600">Hard</span>
+					<a className="font-bold text-gray-800">Drop rate:</a>
+					<a className="text-red-600">Hard</a>
 				</li>
 				<li className="flex items-center space-x-2">
-					<span className="font-bold text-gray-800">Drops até:</span>
-					<span className="text-green-600">105</span>
+					<a className="font-bold text-gray-800">Drops até:</a>
+					<a className="text-green-600">105</a>
 				</li>
 				<li className="flex items-center space-x-2">
-					<span className="font-bold text-gray-800">Mapas até:</span>
-					<span className="text-green-600">ET3</span>
+					<a className="font-bold text-gray-800">Mapas até:</a>
+					<a className="text-green-600">ET3</a>
 				</li>
 				<li className="flex items-center space-x-2">
-					<span className="font-bold text-gray-800">Aging até:</span>
-					<span className="text-green-600">+20</span>
+					<a className="font-bold text-gray-800">Aging até:</a>
+					<a className="text-green-600">+20</a>
 				</li>
 				<li className="flex items-center space-x-2">
-					<span className="font-bold text-gray-800">
+					<a className="font-bold text-gray-800">
 						Sistema de roleta de BOSS
-					</span>
+					</a>
 				</li>
 				<li className="flex items-center space-x-2">
-					<span className="font-bold text-gray-800">Alerta BOSS Global</span>
+					<a className="font-bold text-gray-800">Alerta BOSS Global</a>
 				</li>
 				<li className="flex items-center space-x-2">
-					<span className="font-bold text-gray-800">PVP no "K"</span>
+					<a className="font-bold text-gray-800">PVP no "K"</a>
 				</li>
 				<li className="flex items-center space-x-2">
-					<span className="font-bold text-gray-800">Sistema Vip</span>
+					<a className="font-bold text-gray-800">Sistema Vip</a>
 				</li>
 				<li className="flex items-center space-x-2">
-					<span className="font-bold text-gray-800">
+					<a className="font-bold text-gray-800">
 						Tudo que tem no jogo é dropavel até coins
-					</span>
+					</a>
 				</li>
 				<li className="flex items-center space-x-2">
-					<span className="font-bold text-gray-800">
+					<a className="font-bold text-gray-800">
 						Arena PVP com BOSS para os 3 colocados
-					</span>
+					</a>
 				</li>
 				<li className="flex items-center space-x-2">
-					<span className="font-bold text-gray-800">PvP Equilibrado</span>
+					<a className="font-bold text-gray-800">PvP Equilibrado</a>
 				</li>
 				<li className="flex items-center space-x-2">
-					<span className="font-bold text-gray-800">
+					<a className="font-bold text-gray-800">
 						3 Coroas de Sod com Status
-					</span>
+					</a>
 				</li>
 				<li className="flex items-center space-x-2">
-					<span className="font-bold text-gray-800">Destaque de classe</span>
+					<a className="font-bold text-gray-800">Destaque de classe</a>
 				</li>
 				<li className="flex items-center space-x-2">
-					<span className="font-bold text-gray-800">Logado Premiado</span>
+					<a className="font-bold text-gray-800">Logado Premiado</a>
 				</li>
 				<li className="flex items-center space-x-2">
-					<span className="font-bold text-gray-800">Loja de Tempo</span>
+					<a className="font-bold text-gray-800">Loja de Tempo</a>
 				</li>
 				<li className="flex items-center space-x-2 ">
-					<span className="font-bold text-gray-800">Evento de perguntas</span>
+					<a className="font-bold text-gray-800">Evento de perguntas</a>
 				</li>
 				<li className="flex items-center space-x-2 font-bold text-gray-800">
 					Suporte é pelo Discord
