@@ -6,6 +6,7 @@ import Link from "next/link";
 import Head from "next/head";
 import { useState } from "react";
 import Modal from "react-modal";
+import { FaWhatsapp } from "react-icons/fa";
 
 export default function Home() {
 	const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -93,22 +94,33 @@ export default function Home() {
 					<RanquePVP />
 				</div>
 			</div>
-			<div className="flex justify-between gap-6 md:flex-col">
+			<div className="flex w-[90%] justify-between gap-10 md:flex-col bg-gray-100 p-4">
 				<iframe
 					src="https://discord.com/widget?id=1181632791935471636&theme=dark"
 					width="350"
 					height="500"
 					sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+					className="border-4 border-emerald-500 rounded-lg"
 				></iframe>
+				<div className="flex flex-col gap-6">
+					<h1 className="flex justify-center items-center gap-4 italic text-lg font-bold text-emerald-700">
+						Entre no grupo <FaWhatsapp size={32} />
+					</h1>
+					<img
+						src="/qrcodegrupo.png"
+						alt="qrcodewhatsapp"
+						className="w-64 h-64 mx-auto"
+					/>
+					<a
+						href="https://chat.whatsapp.com/DNyfE0TlxRo6GyXEGyNS8r"
+						className="bg-emerald-500 p-2 rounded text-white text-center font-semibold hover:bg-emerald-600"
+					>
+						Entrar
+					</a>
+				</div>
 			</div>
 
 			<Prompt />
-			<div>
-				<audio controls autoPlay muted hidden>
-					<source src="/bemvindo.mp3" type="audio/mp3" />
-					Your browser does not support the audio element.
-				</audio>
-			</div>
 			<Modal
 				isOpen={modalIsOpen}
 				onRequestClose={closeModal}
