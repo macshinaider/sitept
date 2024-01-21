@@ -86,7 +86,7 @@ export default function Home() {
 				height="500"
 				sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
 			></iframe>
-			<div className="flex flex-col items-start bg-gray-100 p-4 rounded-lg shadow-lg">
+			{/* <div className="flex flex-col items-start bg-gray-100 p-4 rounded-lg shadow-lg">
 				<h1 className="flex items-center space-x-2">
 					<a className="font-bold text-gray-800">Level Inicial:</a>
 					<a className="text-green-600">1</a>
@@ -162,7 +162,7 @@ export default function Home() {
 				<h1 className="flex items-center space-x-2 font-bold text-gray-800">
 					Suporte é pelo Discord
 				</h1>
-			</div>
+			</div> */}
 		</div>
 
 			<Prompt />
