@@ -97,7 +97,7 @@ export async function Cadastro(data: createCadastroData) {
 			},
 		};
 		const confirmed1 = await api.post(`/message/sendText/${INSTANCE}`, data1);
-		// EnviarAudio(cadastrar.Whatsapp);
+		await EnviarAudio(cadastrar.Whatsapp);
 		return true;
 	} catch (error) {
 		console.log(error)
