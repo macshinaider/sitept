@@ -42,8 +42,8 @@ export default function Home() {
 				</>
 				{/* <LaunchPage /> */}
 				<div>
-					<audio controls autoPlay hidden>
-						<source src="/bemvindo.mp3" type="audio/mpeg" />
+					<audio controls autoPlay  >
+						<source src="/bemvindo.mp3" type="audio/mp3" />
 						Your browser does not support the audio element.
 					</audio>
 				</div>
