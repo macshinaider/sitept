@@ -4,7 +4,7 @@ import RanquePVP from "@/components/rankpvp";
 import RanqueEXP from "@/components/rankxp";
 import Link from "next/link";
 import Head from "next/head";
-import Informacoes from "@/components/informacoes/info";
+import DevInfo from "@/components/informacoes/info";
 
 export default function Home() {
 	function DiscordRedirect() {
@@ -86,7 +86,7 @@ export default function Home() {
 				</div>
 			</div>
 			<div className="flex justify-between">
-				<Informacoes />
+				<DevInfo />
 			</div>
 
 			<Prompt />

@@ -1,4 +1,4 @@
-const Informacoes = () => {
+const DevInfo = () => {
 	return (
 		<div className="flex justify-between gap-6 md:flex-col">
 			<iframe
@@ -88,4 +88,4 @@ const Informacoes = () => {
 	);
 };
 
-export default Informacoes;
+export default DevInfo;
