@@ -33,7 +33,7 @@ export default function Home() {
 						<link rel="canonical" href="https://www.pt.larean.com.br" />
 					</Head>
 				</>
-				{/* <LaunchPage /> */}
+				
 				<div>
 					<audio controls autoPlay hidden>
 						<source src="/bemvindo.mp3" type="audio/mp3" />
@@ -86,7 +86,7 @@ export default function Home() {
 				</div>
 			</div>
 			<div className="flex justify-between">
-			<Informacoes />
+				<Informacoes />
 			</div>
 
 			<Prompt />
