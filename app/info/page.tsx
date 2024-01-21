@@ -2,7 +2,7 @@
 import Head from "next/head";
 import { useRouter } from "next/navigation";
 
-const info = () => {
+const Info = () => {
 	const route = useRouter();
 	return (
 		<div className="container mx-auto px-4 ">
@@ -80,4 +80,4 @@ const info = () => {
 	);
 };
 
-export default info;
+export default Info;
