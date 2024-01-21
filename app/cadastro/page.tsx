@@ -48,7 +48,7 @@ const ModalCadastro = () => {
 	}
 
 	return (
-		<main className=" h-screen flex-col gap-4 bg-zinc-950 text-zinc-300 flex items-center justify-center">
+		<main className="flex flex-col gap-4 bg-zinc-950 text-zinc-300 items-center justify-center p-4">
 			<form
 				onSubmit={handleSubmit(createUser)} // high-order function
 				className="flex flex-col gap-4 w-full max-w-xs"
