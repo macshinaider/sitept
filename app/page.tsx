@@ -17,6 +17,14 @@ export default function Home() {
 	function DiscordRedirect() {
 		window.open("https://discord.gg/A7RtTbavEW", "_blank");
 	}
+	const baixarArquivo = (url: string) => {
+		var link = document.createElement("a");
+		link.href = url;
+		link.download = "nome_do_arquivo";
+		document.body.appendChild(link);
+		link.click();
+		document.body.removeChild(link);
+	};
 
 	return (
 		<main className="flex flex-col items-center justify-center text-center inset-0 gap-5 p-2">
@@ -52,7 +60,13 @@ export default function Home() {
 							Discord
 						</p>
 					</button>
-					<button>
+					<button
+						onClick={() =>
+							baixarArquivo(
+								"https://console.testes-minio.bkbdro.easypanel.host/lareantristontale/LareanPT.exe"
+							)
+						}
+					>
 						<p className="bg-green-500 hover:bg-green-700 p-2 rounded-lg text-white">
 							Download
 						</p>
