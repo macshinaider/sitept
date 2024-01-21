@@ -61,12 +61,7 @@ export default function Home() {
 					>
 						Recuperar Senha
 					</Link>
-					<Link
-						href="/info"
-						className="bg-lime-500 hover:bg-lime-700 p-2 rounded-lg text-white"
-					>
-						Informações
-					</Link>
+					
 					<button onClick={DiscordRedirect}>
 						<p className="bg-[#5865F2] hover:bg-blue-800 p-2 rounded-lg text-white">
 							Discord
