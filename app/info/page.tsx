@@ -1,48 +1,41 @@
-"use client";
-
-
-
 const Info = () => {
-	;
 	return (
-		<div className="container mx-auto px-4 ">
+		<div className="container mx-auto px-4">
 			<main className="flex flex-col items-center justify-center min-h-screen gap-3 p-2">
 				<div className="bg-emerald-500 p-3 rounded">
-					<button className="text-white">
-						Voltar
-					</button>
+					<button className="text-white">Voltar</button>
 				</div>
 				<h1 className="text-4xl font-bold text-blue-600">
 					Larean Priston Tale
 				</h1>
 				<ul className="text-lg text-gray-700 list-disc mt-4">
-					<li>
-						Level Inicial:
+					<li className="flex gap-3">
+						<h1>Level Inicial:</h1>
 						<span className="text-green-500 font-semibold">1</span>
 					</li>
-					<li>
-						Level Máximo:
+					<li className="flex gap-3">
+						<h1>Level Máximo:</h1>
 						<span className="text-green-500 font-semibold">130</span>
 					</li>
-					<li>
-						Itens Máximo:
+					<li className="flex gap-3">
+						<h1>Itens Máximo:</h1>
 						<span className="text-green-500 font-semibold">105</span>
 					</li>
-					<li>
-						Taxa de Gold:
+					<li className="flex gap-3">
+						<h1>Taxa de Gold:</h1>
 						<span className="text-red-500 font-semibold">Hard</span>
 					</li>
-					<li>
-						Taxa de Drops:
+					<li className="flex gap-3">
+						<h1>Taxa de Drops:</h1>
 						<span className="text-red-500 font-semibold">Hard</span>
 					</li>
-					<li>
-						Taxa de Experiência:
+					<li className="flex gap-3">
+						<h1>Taxa de Experiência:</h1>
 						<span className="text-yellow-500 font-semibold">13x</span>
 					</li>
 					<li>Sistema de Quests</li>
-					<li>
-						Mapa Máximo:
+					<li className="flex gap-3">
+						<h1>Mapa Máximo:</h1>
 						<span className="text-purple-500 font-semibold">ET3</span>
 					</li>
 					<li>
@@ -67,7 +60,6 @@ const Info = () => {
 					<li>Sistema de craft</li>
 					<li>Alerta de Aging</li>
 					<li>
-						Alerta player alcançou Level
 						<span className="text-orange-500 font-semibold">80+</span>
 					</li>
 					<li>Loja coins e tempo</li>
