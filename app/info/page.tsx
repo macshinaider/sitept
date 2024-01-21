@@ -17,32 +17,32 @@ const Info = () => {
 				</h1>
 				<ul className="text-lg text-gray-700 list-disc mt-4">
 					<li>
-						Level Inicial:{" "}
+						Level Inicial:
 						<span className="text-green-500 font-semibold">1</span>
 					</li>
 					<li>
-						Level Máximo:{" "}
+						Level Máximo:
 						<span className="text-green-500 font-semibold">130</span>
 					</li>
 					<li>
-						Itens Máximo:{" "}
+						Itens Máximo:
 						<span className="text-green-500 font-semibold">105</span>
 					</li>
 					<li>
-						Taxa de Gold:{" "}
+						Taxa de Gold:
 						<span className="text-red-500 font-semibold">Hard</span>
 					</li>
 					<li>
-						Taxa de Drops:{" "}
+						Taxa de Drops:
 						<span className="text-red-500 font-semibold">Hard</span>
 					</li>
 					<li>
-						Taxa de Experiência:{" "}
+						Taxa de Experiência:
 						<span className="text-yellow-500 font-semibold">13x</span>
 					</li>
 					<li>Sistema de Quests</li>
 					<li>
-						Mapa Máximo:{" "}
+						Mapa Máximo:
 						<span className="text-purple-500 font-semibold">ET3</span>
 					</li>
 					<li>
