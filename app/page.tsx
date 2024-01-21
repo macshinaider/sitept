@@ -14,6 +14,7 @@ import LaunchPage from "@/components/countdown";
 import Head from "next/head";
 
 export default function Home() {
+	
 	function DiscordRedirect() {
 		window.open("https://discord.gg/A7RtTbavEW", "_blank");
 	}
