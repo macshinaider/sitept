@@ -9,15 +9,31 @@ import { VerificarUserExistente } from "@/function/verificarseexiste";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useRouter } from "next/navigation";
+import api from "@/lib/axios";
+import { VerificarNumber } from "@/function/whatsapp/NumeroValido";
+import { VerificarWhatsapp } from "./verificarseexistenumber";
+
+async function isPhoneNumberValid(phoneNumber: any) {
+	const verificar = await VerificarNumber(phoneNumber);
+	if (verificar) {
+		const res = await VerificarWhatsapp(phoneNumber);
+		if (res) {
+			return true;
+		}
+	}
+	return false;
+}
 
 const createUserFormSchema = z.object({
 	username: z.string().min(6, "Seu usuario tem muito pouco Caracteres!"),
 	nome: z.string().min(6, "Nome tem muito curto"),
-	cpf: z.string().min(6, "cpf invalido"),
-	password: z.string().min(4, "Senha muito curta!"),
-	email: z.string().email("Formato de Email errado!"),
-	whatsapp: z.string().min(13, "Precisar ser um numero correto!"),
-	cep: z.string().min(6, "Faltante o Cep"),
+	password: z.string().min(4, "Senha muito curta!"),	
+	whatsapp: z
+		.string()
+		.min(13, "Precisar ser um numero correto!")
+		.refine(async (value) => await isPhoneNumberValid(value), {
+			message: "Precisar ser um numero correto!",
+		}),
 });
 
 type CreateUserFormData = z.infer<typeof createUserFormSchema>;
@@ -48,7 +64,7 @@ const ModalCadastro = () => {
 	}
 
 	return (
-		<main className="flex flex-col gap-4 bg-zinc-950 text-zinc-300 items-center justify-center p-4">
+		<main className="flex flex-col gap-4 bg-zinc-950 text-zinc-300 items-center justify-center p-4 h-screen">
 			<form
 				onSubmit={handleSubmit(createUser)} // high-order function
 				className="flex flex-col gap-4 w-full max-w-xs"
@@ -75,18 +91,7 @@ const ModalCadastro = () => {
 					{/* @ts-ignore */}
 					{errors.nome && <span>{errors.nome.message}</span>}
 				</div>
-				<div className="flex flex-col gap-1">
-					<label htmlFor="cpf">CPF</label>
-					<InputMask
-						mask="999.999.999-99"
-						placeholder="Exemplo: 999.999.999-99"
-						type="text"
-						className="border border-zinc-600 shadow-sm rounded h-10 px-3 bg-zinc-800 text-white"
-						{...register("cpf", { required: true })}
-					/>
-					{/* @ts-ignore */}
-					{errors.cpf && <span>{errors.cpf.message}</span>}
-				</div>
+
 				<div className="flex flex-col gap-1">
 					<label htmlFor="password">Password</label>
 					<input
@@ -96,18 +101,7 @@ const ModalCadastro = () => {
 					/>
 					{/* @ts-ignore */}
 					{errors.password && <span>{errors.password.message}</span>}
-				</div>
-				<div className="flex flex-col gap-1">
-					<label htmlFor="email">E-mail</label>
-					<input
-						type="email"
-						placeholder="lucasadd15@gmail.com"
-						className="border border-zinc-600 shadow-sm rounded h-10 px-3 bg-zinc-800 text-white"
-						{...register("email", { required: true })}
-					/>
-					{/* @ts-ignore */}
-					{errors.email && <span>{errors.email.message}</span>}
-				</div>
+				</div>				
 				<div className="flex flex-col gap-1">
 					<label htmlFor="whatsapp">Whatsapp</label>
 					<InputMask
@@ -116,18 +110,6 @@ const ModalCadastro = () => {
 						placeholder="Exemplo 5511942042224"
 						className="border border-zinc-600 shadow-sm rounded h-10 px-3 bg-zinc-800 text-white"
 						{...register("whatsapp", { required: true })}
-					/>
-					{/* @ts-ignore */}
-					{errors.whatsapp && <span>{errors.whatsapp.message}</span>}
-				</div>
-				<div className="flex flex-col gap-1">
-					<label htmlFor="whatsapp">CEP</label>
-					<InputMask
-						mask="99999-999"
-						type="text"
-						placeholder="Exemplo 08720-005"
-						className="border border-zinc-600 shadow-sm rounded h-10 px-3 bg-zinc-800 text-white"
-						{...register("cep", { required: true })}
 					/>
 					{/* @ts-ignore */}
 					{errors.whatsapp && <span>{errors.whatsapp.message}</span>}
