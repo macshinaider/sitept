@@ -78,7 +78,9 @@ export default function Home() {
 				<div>
 					<RanqueEXP />
 				</div>
-				<div></div>
+				<div>
+					<img src="/fighter_2013.png" alt="lutador" />
+				</div>
 				<div>
 					<RanquePVP />
 				</div>
