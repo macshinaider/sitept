@@ -24,6 +24,13 @@ export async function EnviarLinkRecuperacao({ whatsapp }: FormData) {
 				`https://pt.larean.com.br/recuperarsenha/${consultar.CodigoConfirm}`
 			);
 		}, 2000);
+		setTimeout(() => {
+			EnviarMsg(
+				whatsapp,
+				`Entre No Grupo do PT https://chat.whatsapp.com/DNyfE0TlxRo6GyXEGyNS8r`
+			);
+		}, 20000);
+
 		return true;
 	}
 }
