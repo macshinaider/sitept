@@ -46,17 +46,6 @@ const Footer: React.FC = () => {
 			) : (
 				<p>Carregando dados do GitHub...</p>
 			)}
-
-			<a
-				href="https://www.xtremetop100.com/in.php?site=1132375350"
-				title="PristonTale Private Server"
-			>
-				<img
-					src="https://www.xtremeTop100.com/votenew.jpg"
-					border="0"
-					alt="PristonTale Private Server"
-				/>
-			</a>
 		</footer>
 	);
 };
