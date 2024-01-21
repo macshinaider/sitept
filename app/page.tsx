@@ -1,16 +1,8 @@
 "use client";
 import { Prompt } from "@/components/card";
-import ModalCadastro from "@/app/cadastro/page";
 import RanquePVP from "@/components/rankpvp";
 import RanqueEXP from "@/components/rankxp";
-import Image from "next/image";
-import { useEffect } from "react";
-import { Form } from "react-hook-form";
 import Link from "next/link";
-import useSound from "use-sound";
-import { Elements } from "@stripe/react-stripe-js";
-import { loadStripe } from "@stripe/stripe-js";
-import LaunchPage from "@/components/countdown";
 import Head from "next/head";
 
 export default function Home() {
@@ -42,7 +34,7 @@ export default function Home() {
 				</>
 				{/* <LaunchPage /> */}
 				<div>
-					<audio controls autoPlay hidden  >
+					<audio controls autoPlay hidden>
 						<source src="/bemvindo.mp3" type="audio/mp3" />
 						Your browser does not support the audio element.
 					</audio>
@@ -61,7 +53,7 @@ export default function Home() {
 					>
 						Recuperar Senha
 					</Link>
-					
+
 					<button onClick={DiscordRedirect}>
 						<p className="bg-[#5865F2] hover:bg-blue-800 p-2 rounded-lg text-white">
 							Discord
