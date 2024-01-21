@@ -67,7 +67,7 @@ const Info = () => {
 					<li>Sistema de craft</li>
 					<li>Alerta de Aging</li>
 					<li>
-						Alerta player alcançou Level{" "}
+						Alerta player alcançou Level
 						<span className="text-orange-500 font-semibold">80+</span>
 					</li>
 					<li>Loja coins e tempo</li>
