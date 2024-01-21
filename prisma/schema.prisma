@@ -73,8 +73,10 @@ model Users {
   Confirmed     Boolean @default(false)
   Whatsapp      String  @unique
   CodigoConfirm String?
-  Nome          String @default("null")
-  Cpf           String @default("null")
+  Nome          String? @default("null")
+  Cpf           String? @unique @default("null")
+  Iduserasaas   String? @unique @default("null")
+  Cep           String? @default("null")
 }
 
 model Group {
@@ -97,3 +99,10 @@ model VIP {
   @@ignore
 }
 
+model Pedidos {
+  id     Int     @id @unique @default(autoincrement())
+  numero String
+  User   String
+  QRcode Bytes
+  pago   Boolean @default(false)
+}

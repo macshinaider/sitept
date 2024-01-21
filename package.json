@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "prisma generate && next dev",
+    "dev": "prisma generate && npx prisma format && next dev",
     "build": "prisma generate && next build",
     "start": "next start",
     "lint": "next lint"
@@ -16,6 +16,7 @@
     "@types/axios": "^0.14.0",
     "@types/bcrypt": "^5.0.2",
     "@types/react-howler": "^5.2.3",
+    "@types/react-input-mask": "^3.0.5",
     "@types/react-modal": "^3.16.3",
     "@types/react-toastify": "^4.1.0",
     "@types/stripe": "^8.0.417",
@@ -31,6 +32,7 @@
     "react-hook-form-resolvers": "^0.0.1",
     "react-howler": "^5.2.0",
     "react-icons": "^4.12.0",
+    "react-input-mask": "^2.0.4",
     "react-loading-skeleton": "^3.3.1",
     "react-modal": "^3.16.1",
     "react-query": "^3.39.3",

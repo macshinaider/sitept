@@ -1,10 +1,10 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://apiwhatsapp.jonife.com.br",
+  baseURL: "https://apizap.jonife.com.br",
   headers: {
     "Content-Type": "application/json",
-    apikey: "Lucas102030",
+    apikey: "euamojesus102030",
   },
 });
 

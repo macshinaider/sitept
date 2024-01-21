@@ -3,16 +3,19 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useState } from "react";
+import { Payment } from "../api/payment/checkout/types";
+import { getQrcode } from "../api/payment/checkout/getqrcode";
+import { CreatePedido } from "../api/payment/checkout/gravarpedido";
 
 // Crie um esquema Zod para a validação do formulário
 const schema = z.object({
-	username: z.string().nonempty({ message: "Username is required" }),
+	username: z.string(),
 	coins: z.string(),
 });
 
 export default function Form() {
-    const [Username, setUsername] = useState('')
-    const [coins, setCoins] = useState('')
+	const [Username, setUsername] = useState("");
+	const [coins, setCoins] = useState<number>();
 	const {
 		register,
 		handleSubmit,
@@ -21,16 +24,43 @@ export default function Form() {
 		resolver: zodResolver(schema),
 	});
 
+	function ConverterCoinsEmReais(coins: number) {
+		return coins / 100;
+	}
+
 	const onSubmit = async (data: any) => {
+		console.log("🚀 ~ onSubmit ~ data:", data);
 		// Verifique se o nome de usuário existe antes de enviar
 		const response = await fetch(`/api/users?username=${data.username}`);
+
 		if (!response.ok) {
-			alert("esse Usuario não existe");
+			alert("Esse Usuario não existe");
 			return;
 		}
 
-		
-		console.log(data);
+		const reais = ConverterCoinsEmReais(data.coins);
+		const createcobranca = await fetch("api/payment/checkout", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({
+				valor: reais,
+				username: data.username,
+			}),
+		});
+		if (createcobranca.ok) {
+			const data2: Payment = await createcobranca.json();
+			const QRcodeimg = await getQrcode(data2.id);
+			const creatpedido = await CreatePedido(
+				data2.id,
+				data.username,
+				QRcodeimg
+			);
+			console.log("🚀 ~ onSubmit ~ creatpedido:", creatpedido);
+
+			console.log(data);
+		}
 	};
 
 	return (
@@ -65,7 +95,7 @@ export default function Form() {
 					{...register("coins")}
 					className="mt-1 text-black block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
 				/>
-				{errors.coins && typeof errors.coins.message === "string" && (
+				{errors.coins && typeof errors.coins.message === "number" && (
 					<p className="mt-2 text-sm text-red-600">{errors.coins.message}</p>
 				)}
 			</div>

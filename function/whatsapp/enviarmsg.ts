@@ -1,6 +1,8 @@
 "use server"
 import api from "@/lib/axios";
 
+const INSTANCE = process.env.INSTANCE_API_ZAP || "lucaspt"
+
 export async function EnviarMsg(whatsapp: string, message: string) {
 	const data = {
 		number: whatsapp,
@@ -14,5 +16,5 @@ export async function EnviarMsg(whatsapp: string, message: string) {
 		},
 	};
 
-	const enviarmsg = await api.post(`/message/sendText/jonife`, data);
+	const enviarmsg = await api.post(`/message/sendText/${INSTANCE}`, data);
 }
