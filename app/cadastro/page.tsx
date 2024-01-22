@@ -104,8 +104,7 @@ const ModalCadastro = () => {
 				</div>				
 				<div className="flex flex-col gap-1">
 					<label htmlFor="whatsapp">Whatsapp</label>
-					<InputMask
-						mask="9999999999999"
+					<input						
 						type="text"
 						placeholder="Exemplo 5511942042224"
 						className="border border-zinc-600 shadow-sm rounded h-10 px-3 bg-zinc-800 text-white"
