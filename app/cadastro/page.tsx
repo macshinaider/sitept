@@ -30,7 +30,7 @@ const createUserFormSchema = z.object({
 	password: z.string().min(4, "Senha muito curta!"),	
 	whatsapp: z
 		.string()
-		.min(13, "Precisar ser um numero correto!")
+		.min(8, "Precisar ser um numero correto!")
 		.refine(async (value) => await isPhoneNumberValid(value), {
 			message: "Precisar ser um numero correto!",
 		}),
