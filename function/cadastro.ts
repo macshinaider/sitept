@@ -56,7 +56,7 @@ export async function Cadastro(data: createCadastroData) {
 				phone: data.whatsapp,
 				mobilePhone: data.whatsapp,
 				postalCode: data.cep,
-			};			
+			};
 		}
 
 		if (!cadastrar) {
@@ -80,7 +80,7 @@ export async function Cadastro(data: createCadastroData) {
 				linkPreview: true,
 			},
 			textMessage: {
-				text: `Para você Ganhar os 2000 Coins você precisa confirmar seu cadastro nesse Link Abaixo! \n\n Larean Priston Tale \n www.pt.larean.com.br`,
+				text: `Crie Seu Personagem Dentro do Jogo ja LvL:130 com items 105+10 \n tenha uma otima experiencia em PvP \n\n Suporte Somente Por Discord`,
 			},
 		};
 		const confirmed = await api.post(`/message/sendText/${INSTANCE}`, datau);
@@ -100,6 +100,6 @@ export async function Cadastro(data: createCadastroData) {
 		await EnviarAudio(cadastrar.Whatsapp);
 		return true;
 	} catch (error) {
-		console.log(error)
+		console.log(error);
 	}
 }
