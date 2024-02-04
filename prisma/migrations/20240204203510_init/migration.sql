@@ -76,10 +76,24 @@ CREATE TABLE [dbo].[Users] (
     [Confirmed] BIT NOT NULL CONSTRAINT [Users_Confirmed_df] DEFAULT 0,
     [Whatsapp] NVARCHAR(1000) NOT NULL,
     [CodigoConfirm] NVARCHAR(1000),
+    [Nome] NVARCHAR(1000) CONSTRAINT [Users_Nome_df] DEFAULT 'null',
+    [Cpf] NVARCHAR(1000) CONSTRAINT [Users_Cpf_df] DEFAULT 'null',
+    [Iduserasaas] NVARCHAR(1000) CONSTRAINT [Users_Iduserasaas_df] DEFAULT 'null',
+    [Cep] NVARCHAR(1000) CONSTRAINT [Users_Cep_df] DEFAULT 'null',
     CONSTRAINT [PK_Users_ID] PRIMARY KEY CLUSTERED ([ID]),
     CONSTRAINT [UK_Users_ID] UNIQUE NONCLUSTERED ([ID]),
     CONSTRAINT [UK_Users_Username] UNIQUE NONCLUSTERED ([Username]),
     CONSTRAINT [Users_Whatsapp_key] UNIQUE NONCLUSTERED ([Whatsapp])
+);
+
+-- CreateTable
+CREATE TABLE [dbo].[Group] (
+    [ID] INT NOT NULL IDENTITY(1,1),
+    [Groupid] NVARCHAR(1000) NOT NULL,
+    [Size] NVARCHAR(1000) NOT NULL,
+    CONSTRAINT [Group_pkey] PRIMARY KEY CLUSTERED ([ID]),
+    CONSTRAINT [Group_ID_key] UNIQUE NONCLUSTERED ([ID]),
+    CONSTRAINT [Group_Groupid_key] UNIQUE NONCLUSTERED ([Groupid])
 );
 
 -- CreateTable
@@ -92,6 +106,17 @@ CREATE TABLE [dbo].[VIP] (
     [MesExpira] INT,
     [AnoExpira] INT,
     [VipLevel] INT
+);
+
+-- CreateTable
+CREATE TABLE [dbo].[Pedidos] (
+    [id] INT NOT NULL IDENTITY(1,1),
+    [numero] NVARCHAR(1000) NOT NULL,
+    [User] NVARCHAR(1000) NOT NULL,
+    [QRcode] VARBINARY(max) NOT NULL,
+    [pago] BIT NOT NULL CONSTRAINT [Pedidos_pago_df] DEFAULT 0,
+    CONSTRAINT [Pedidos_pkey] PRIMARY KEY CLUSTERED ([id]),
+    CONSTRAINT [Pedidos_id_key] UNIQUE NONCLUSTERED ([id])
 );
 
 COMMIT TRAN;
